@@ -8,13 +8,11 @@ part of 'card.dart';
 
 Card _$CardFromJson(Map<String, dynamic> json) {
   return Card()
-    ..namespace = json['namespace'] as String
-    ..info = json['info'] as String
+    ..no = json['no'] as String
     ..name = json['name'] as String;
 }
 
 Map<String, dynamic> _$CardToJson(Card instance) => <String, dynamic>{
-      'namespace': instance.namespace,
-      'info': instance.info,
+      'no': instance.no,
       'name': instance.name,
     };

@@ -8,13 +8,12 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:args/command_runner.dart';
 import 'package:build/build.dart';
-import 'package:glob/glob.dart';
-import 'package:logging/logging.dart';
-import 'package:path/path.dart' as p;
-
 import 'package:build_runner_core/build_runner_core.dart';
 import 'package:build_runner_core/src/asset_graph/graph.dart';
 import 'package:build_runner_core/src/asset_graph/node.dart';
+import 'package:glob/glob.dart';
+import 'package:logging/logging.dart';
+import 'package:path/path.dart' as p;
 
 AssetGraph assetGraph;
 PackageGraph packageGraph;
@@ -50,7 +49,7 @@ Future<void> main(List<String> args) async {
   stdout.writeln('Loading asset graph at ${assetGraphFile.path}...');
 
   assetGraph = AssetGraph.deserialize(assetGraphFile.readAsBytesSync());
-  packageGraph = PackageGraph.forThisPackage();
+  packageGraph = await PackageGraph.forThisPackage();
 
   var commandRunner = CommandRunner<bool>(
       '', 'A tool for inspecting the AssetGraph for your build')

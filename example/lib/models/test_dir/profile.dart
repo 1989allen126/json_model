@@ -8,6 +8,7 @@ class Profile {
 
     String name;
     num age;
+    bool male;
     
     factory Profile.fromJson(Map<String,dynamic> json) => _$ProfileFromJson(json);
     Map<String, dynamic> toJson() => _$ProfileToJson(this);

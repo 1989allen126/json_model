@@ -6,8 +6,7 @@ part 'card.g.dart';
 class Card {
     Card();
 
-    String namespace;
-    String info;
+    String no;
     String name;
     
     factory Card.fromJson(Map<String,dynamic> json) => _$CardFromJson(json);

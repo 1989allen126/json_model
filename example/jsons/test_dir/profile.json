@@ -1,4 +1,5 @@
 {
   "name":"wendux",
-  "age":20
+  "age":20,
+  "male":true
 }
